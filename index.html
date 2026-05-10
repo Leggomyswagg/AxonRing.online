@@ -384,6 +384,84 @@
     .faq-a.open { max-height: 200px; padding: 0 24px 20px; }
     .faq-a p { color: var(--gray); font-size: 14px; line-height: 1.8; }
 
+    /* ── Lifestyle Gallery ── */
+    .lifestyle-bg { background: var(--deep); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .lifestyle-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .lifestyle-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid var(--border);
+    }
+    .lifestyle-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(107, 70, 193, 0.25);
+    }
+    .lifestyle-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .lifestyle-card:hover img { transform: scale(1.05); }
+    .lifestyle-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(5, 5, 8, 0.4) 50%, rgba(5, 5, 8, 0.95) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      transition: background 0.3s ease;
+    }
+    .lifestyle-card:hover .lifestyle-overlay { background: linear-gradient(180deg, rgba(5, 5, 8, 0.3) 0%, rgba(5, 5, 8, 0.6) 50%, rgba(5, 5, 8, 0.97) 100%); }
+    .lifestyle-num {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--cyan);
+      margin-bottom: 8px;
+    }
+    .lifestyle-title {
+      font-family: var(--ff-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+    .lifestyle-desc {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.5;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+    }
+    .lifestyle-card:hover .lifestyle-desc {
+      max-height: 80px;
+      opacity: 1;
+      margin-top: 4px;
+    }
+    @media (max-width: 768px) {
+      .lifestyle-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .lifestyle-card { aspect-ratio: 1; }
+      .lifestyle-overlay { padding: 14px; }
+      .lifestyle-title { font-size: 14px; }
+      .lifestyle-num { font-size: 9px; }
+      .lifestyle-desc { display: none; }
+    }
+
     /* ── Final CTA ── */
     .final-cta {
       background: radial-gradient(ellipse 80% 80% at 50% 50%, rgba(107,70,193,0.2) 0%, transparent 70%);
@@ -451,6 +529,7 @@
     </div>
     <div class="nav-links" id="nav-links" role="navigation">
       <a href="#features">Features</a>
+      <a href="#lifestyle">Lifestyle</a>
       <a href="#how-it-works">How It Works</a>
       <a href="#products">Shop</a>
       <a href="#reviews">Reviews</a>
@@ -581,6 +660,125 @@
           </div>
           <h3 class="feature-title">Smart Home Control</h3>
           <p class="feature-desc">Control lights, locks, thermostats, and appliances with a wave. Works with HomeKit, Google Home, and SmartThings.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LIFESTYLE GALLERY ── -->
+  <section id="lifestyle" class="lifestyle-bg" aria-labelledby="lifestyle-title">
+    <div class="container">
+      <p class="section-label">In Your Day</p>
+      <h2 class="section-title fade-up" id="lifestyle-title">Designed for Every Moment</h2>
+      <p class="section-sub fade-up fade-up-d1">From your morning ritual to your evening unwind — AxonRing belongs in every part of your day.</p>
+
+      <div class="lifestyle-grid">
+        <article class="lifestyle-card fade-up fade-up-d1">
+          <img src="images/1-morning-wakeup.jpg" alt="Morning wake-up with AxonRing tracking sleep" loading="lazy" />
+          <div class="lifestyle-overlay">
+            <span class="lifestyle-num">01 — MORNING</span>
+            <h3 class="lifestyle-title">The Quiet Wake</h3>
+            <p class="lifestyle-desc">Sleep tracking, gentle alarms, and your day's first briefing — all without reaching for your phone.</p>
+          </div>
+        </article>
+
+        <article class="lifestyle-card fade-up fade-up-d2">
+          <img src="images/2-fitness-gym.jpg" alt="Fitness tracking at the gym with AxonRing" loading="lazy" />
+          <div class="lifestyle-overlay">
+            <span class="lifestyle-num">02 — TRAIN</span>
+            <h3 class="lifestyle-title">Lift Without Limits</h3>
+            <p class="lifestyle-desc">Heart rate, reps, and recovery metrics tracked precisely — sweat-proof and built to keep up.</p>
+          </div>
+        </article>
+
+        <article class="lifestyle-card fade-up fade-up-d3">
+          <img src="images/3-outdoor-running.jpg" alt="Outdoor running with AxonRing tracking pace" loading="lazy" />
+          <div class="lifestyle-overlay">
+            <span class="lifestyle-num">03 — RUN</span>
+            <h3 class="lifestyle-title">Run Phone-Free</h3>
+            <p class="lifestyle-desc">GPS, pace, and route mapping built into the ring. Leave the phone behind.</p>
+          </div>
+        </article>
+
+        <article class="lifestyle-card fade-up fade-up-d4">
+          <img src="images/4-professional-office.jpg" alt="Professional office work with AxonRing notifications" loading="lazy" />
+          <div class="lifestyle-overlay">
+            <span class="lifestyle-num">04 — WORK</span>
+            <h3 class="lifestyle-title">Discreet Notifications</h3>
+            <p class="lifestyle-desc">Calendar, email, and VIP filtering — surface only what matters, never a distraction.</p>
+          </div>
+        </article>
+
+        <article class="lifestyle-card fade-up fade-up-d1">
+          <img src="images/5-coffee-shop.jpg" alt="Coffee shop contactless payment with AxonRing" loading="lazy" />
+          <div class="lifestyle-overlay">
+            <span class="lifestyle-num">05 — PAY</span>
+            <h3 class="lifestyle-title">Tap to Pay</h3>
+            <p class="lifestyle-desc">Visa, Mastercard, and Amex — your morning coffee is one gesture away.</p>
+          </div>
+        </article>
+
+        <article class="lifestyle-card fade-up fade-up-d2">
+          <img src="images/6-meditation-mindfulness.jpg" alt="Meditation and mindfulness with AxonRing" loading="lazy" />
+          <div class="lifestyle-overlay">
+            <span class="lifestyle-num">06 — BREATHE</span>
+            <h3 class="lifestyle-title">Stillness Tracked</h3>
+            <p class="lifestyle-desc">Guided sessions, stress detection, and biofeedback — find your center, measured.</p>
+          </div>
+        </article>
+
+        <article class="lifestyle-card fade-up fade-up-d3">
+          <img src="images/7-travel-airport.jpg" alt="Travel and airport boarding with AxonRing" loading="lazy" />
+          <div class="lifestyle-overlay">
+            <span class="lifestyle-num">07 — TRAVEL</span>
+            <h3 class="lifestyle-title">Boarding Pass on Hand</h3>
+            <p class="lifestyle-desc">Boarding info, gate alerts, and luggage tracking — without digging through bags.</p>
+          </div>
+        </article>
+
+        <article class="lifestyle-card fade-up fade-up-d4">
+          <img src="images/8-evening-relaxation.jpg" alt="Evening reading relaxation with AxonRing" loading="lazy" />
+          <div class="lifestyle-overlay">
+            <span class="lifestyle-num">08 — UNWIND</span>
+            <h3 class="lifestyle-title">Focus Mode</h3>
+            <p class="lifestyle-desc">DND scheduling and focus enforcement — engineered for deeper sleep and presence.</p>
+          </div>
+        </article>
+
+        <article class="lifestyle-card fade-up fade-up-d1">
+          <img src="images/9-social-dinner.jpg" alt="Social dinner sharing with AxonRing" loading="lazy" />
+          <div class="lifestyle-overlay">
+            <span class="lifestyle-num">09 — CONNECT</span>
+            <h3 class="lifestyle-title">Skip the Card</h3>
+            <p class="lifestyle-desc">Share contacts, LinkedIn, or socials with one tap. Networking, refined.</p>
+          </div>
+        </article>
+
+        <article class="lifestyle-card fade-up fade-up-d2">
+          <img src="images/10-health-cycling.jpg" alt="Health tracking and cycling with AxonRing" loading="lazy" />
+          <div class="lifestyle-overlay">
+            <span class="lifestyle-num">10 — RIDE</span>
+            <h3 class="lifestyle-title">Performance Telemetry</h3>
+            <p class="lifestyle-desc">Cadence, elevation, power output — all on your finger, all in real-time.</p>
+          </div>
+        </article>
+
+        <article class="lifestyle-card fade-up fade-up-d3">
+          <img src="images/11-product-hero.jpg" alt="AxonRing product close-up hero shot" loading="lazy" />
+          <div class="lifestyle-overlay">
+            <span class="lifestyle-num">11 — DETAIL</span>
+            <h3 class="lifestyle-title">Engineering, Visible</h3>
+            <p class="lifestyle-desc">Premium materials. Sensor array. Built to a standard you can feel.</p>
+          </div>
+        </article>
+
+        <article class="lifestyle-card fade-up fade-up-d4">
+          <img src="images/12-lifestyle-flatlay.jpg" alt="AxonRing lifestyle flat lay packaging" loading="lazy" />
+          <div class="lifestyle-overlay">
+            <span class="lifestyle-num">12 — UNBOX</span>
+            <h3 class="lifestyle-title">Focus. Balance. Thrive.</h3>
+            <p class="lifestyle-desc">Premium packaging. Sizing kit. Concierge setup. A thoughtful, complete system.</p>
+          </div>
         </article>
       </div>
     </div>

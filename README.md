@@ -1,23 +1,11 @@
 # AxonRing — axonring.online
 
-Landing page for [axonring.online](https://axonring.online).
-
-## Deployment
-
-This repo is connected to Vercel and auto-deploys on every push to `main`.
+Landing page deployed to Vercel from this repo.
 
 ## Structure
+- `index.html` — main landing page
+- `images/` — 12 lifestyle product photos
+- `vercel.json` — security headers + image caching
 
-```
-├── index.html      # Main landing page
-├── vercel.json     # Vercel deployment config + security headers
-└── README.md
-```
-
-## Custom Domain
-
-Domain `axonring.online` is configured in Vercel project settings.
-DNS is managed via IONOS — point the following records to Vercel:
-
-- `A` record: `76.76.21.21`
-- `CNAME` record: `cname.vercel-dns.com`
+## Deploying updates
+Push to `main`. Vercel auto-deploys.

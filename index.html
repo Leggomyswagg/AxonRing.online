@@ -387,11 +387,45 @@
     .faq-a.open { max-height: 200px; padding: 0 24px 20px; }
     .faq-a p { color: var(--gray); font-size: 14px; line-height: 1.8; }
 
-    /* ── Lifestyle Gallery ── */
+    /* ── Hero accent photos ── */
+    .hero-photo-row {
+      display: flex; gap: 14px; justify-content: center; align-items: flex-end;
+      margin: -10px 0 44px; flex-wrap: wrap;
+    }
+    .hero-photo-circle {
+      border-radius: 50%; overflow: hidden; flex-shrink: 0;
+      border: 3px solid rgba(139,92,246,0.45);
+      box-shadow: 0 0 24px rgba(107,70,193,0.28);
+    }
+    .hero-photo-circle:nth-child(1) { width: 80px; height: 80px; }
+    .hero-photo-circle:nth-child(2) { width: 108px; height: 108px; border-color: rgba(6,182,212,0.55); box-shadow: 0 0 28px rgba(6,182,212,0.22); }
+    .hero-photo-circle:nth-child(3) { width: 80px; height: 80px; }
+    .hero-photo-circle img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* ── Feature card photo header ── */
+    .feature-photo { width: 100%; aspect-ratio: 16/9; overflow: hidden; border-radius: 10px; margin-bottom: 18px; }
+    .feature-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block; }
+    .feature-card:hover .feature-photo img { transform: scale(1.04); }
+
+    /* ── Step photo ── */
+    .step-photo { width: 72px; height: 72px; border-radius: 50%; overflow: hidden; margin: 0 auto 14px; border: 2px solid rgba(107,70,193,0.5); box-shadow: 0 0 18px rgba(107,70,193,0.25); }
+    .step-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* ── Specs photo banner ── */
+    .specs-photo-banner { width: 100%; height: 220px; border-radius: 20px; overflow: hidden; margin-bottom: 44px; position: relative; }
+    .specs-photo-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; filter: brightness(0.65); display: block; }
+    .specs-photo-banner::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, var(--black) 0%, transparent 35%, transparent 65%, var(--black) 100%); }
+    .specs-banner-text { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 1; flex-direction: column; gap: 6px; }
+    .specs-banner-text span:first-child { font-family: var(--ff-display); font-size: clamp(22px, 4vw, 36px); font-weight: 800; color: var(--white); letter-spacing: -0.5px; }
+    .specs-banner-text span:last-child { font-size: 14px; color: var(--gray); }
+
+    /* ── Lifestyle Gallery — Bento grid ── */
     .lifestyle-bg { background: var(--deep); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .lifestyle-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 280px;
+      grid-auto-flow: dense;
       gap: 16px;
       max-width: 1200px;
       margin: 0 auto;
@@ -400,33 +434,36 @@
       position: relative;
       border-radius: 16px;
       overflow: hidden;
-      aspect-ratio: 4 / 3;
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       border: 1px solid var(--border);
     }
+    /* Featured sizes */
+    .lifestyle-card.feat-wide { grid-column: span 2; }
+    .lifestyle-card.feat-tall { grid-row: span 2; }
     .lifestyle-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 24px 60px rgba(107, 70, 193, 0.25);
+      transform: translateY(-5px);
+      box-shadow: 0 24px 60px rgba(107, 70, 193, 0.28);
     }
     .lifestyle-card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
+      display: block;
     }
     .lifestyle-card:hover img { transform: scale(1.05); }
     .lifestyle-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 0%, rgba(5, 5, 8, 0.4) 50%, rgba(5, 5, 8, 0.95) 100%);
+      background: linear-gradient(180deg, transparent 0%, rgba(5, 5, 8, 0.35) 45%, rgba(5, 5, 8, 0.94) 100%);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       padding: 24px;
       transition: background 0.3s ease;
     }
-    .lifestyle-card:hover .lifestyle-overlay { background: linear-gradient(180deg, rgba(5, 5, 8, 0.3) 0%, rgba(5, 5, 8, 0.6) 50%, rgba(5, 5, 8, 0.97) 100%); }
+    .lifestyle-card:hover .lifestyle-overlay { background: linear-gradient(180deg, rgba(5,5,8,0.25) 0%, rgba(5,5,8,0.55) 45%, rgba(5,5,8,0.97) 100%); }
     .lifestyle-num {
       font-family: var(--ff-mono);
       font-size: 11px;
@@ -457,8 +494,8 @@
       margin-top: 4px;
     }
     @media (max-width: 768px) {
-      .lifestyle-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-      .lifestyle-card { aspect-ratio: 1; }
+      .lifestyle-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; gap: 10px; }
+      .lifestyle-card.feat-wide, .lifestyle-card.feat-tall { grid-column: span 1; grid-row: span 1; }
       .lifestyle-overlay { padding: 14px; }
       .lifestyle-title { font-size: 14px; }
       .lifestyle-num { font-size: 9px; }
@@ -573,6 +610,19 @@
       </div>
     </div>
 
+    <!-- Lifestyle accent photos to ground the hero -->
+    <div class="hero-photo-row" aria-hidden="true">
+      <div class="hero-photo-circle">
+        <img src="images/2-fitness-gym.jpg" alt="Person at the gym wearing AxonRing" />
+      </div>
+      <div class="hero-photo-circle">
+        <img src="images/11-product-hero.jpg" alt="AxonRing close-up product shot" />
+      </div>
+      <div class="hero-photo-circle">
+        <img src="images/4-professional-office.jpg" alt="Professional using AxonRing at work" />
+      </div>
+    </div>
+
     <div class="hero-ctas">
       <a href="#products" class="btn-primary" aria-label="Shop AxonRing products">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 001.97-1.67l1.38-7.33H6"/></svg>
@@ -618,6 +668,9 @@
 
       <div class="features-grid">
         <article class="feature-card fade-up fade-up-d1">
+          <div class="feature-photo">
+            <img src="images/5-coffee-shop.jpg" alt="Contactless payment with AxonRing at a coffee shop" loading="lazy" />
+          </div>
           <div class="feature-icon" style="background:rgba(16,185,129,0.12)">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
           </div>
@@ -642,6 +695,9 @@
         </article>
 
         <article class="feature-card fade-up fade-up-d1">
+          <div class="feature-photo">
+            <img src="images/9-social-dinner.jpg" alt="Sharing contact details at a social dinner with AxonRing" loading="lazy" />
+          </div>
           <div class="feature-icon" style="background:rgba(236,72,153,0.12)">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#EC4899" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           </div>
@@ -658,6 +714,9 @@
         </article>
 
         <article class="feature-card fade-up fade-up-d3">
+          <div class="feature-photo">
+            <img src="images/8-evening-relaxation.jpg" alt="Smart home relaxation scene with AxonRing automation" loading="lazy" />
+          </div>
           <div class="feature-icon" style="background:rgba(6,182,212,0.12)">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
@@ -676,7 +735,7 @@
       <p class="section-sub fade-up fade-up-d1">From your morning ritual to your evening unwind — AxonRing belongs in every part of your day.</p>
 
       <div class="lifestyle-grid">
-        <article class="lifestyle-card fade-up fade-up-d1">
+        <article class="lifestyle-card feat-wide fade-up fade-up-d1">
           <img src="images/1-morning-wakeup.jpg" alt="Morning wake-up with AxonRing tracking sleep" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">01 — MORNING</span>
@@ -730,7 +789,7 @@
           </div>
         </article>
 
-        <article class="lifestyle-card fade-up fade-up-d3">
+        <article class="lifestyle-card feat-wide fade-up fade-up-d3">
           <img src="images/7-travel-airport.jpg" alt="Travel and airport boarding with AxonRing" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">07 — TRAVEL</span>
@@ -757,8 +816,8 @@
           </div>
         </article>
 
-        <article class="lifestyle-card fade-up fade-up-d2">
-          <img src="images/10-health-cycling.jpg" alt="Health tracking and cycling with AxonRing" loading="lazy" />
+        <article class="lifestyle-card feat-wide fade-up fade-up-d2">
+          <img src="images/10-health-cycling.jpg" alt="Cyclist with hand on bicycle handlebars using AxonRing for health and performance tracking" loading="lazy" style="object-position: center 25%;" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">10 — RIDE</span>
             <h3 class="lifestyle-title">Performance Telemetry</h3>
@@ -796,21 +855,33 @@
 
       <div class="steps">
         <div class="step fade-up fade-up-d1">
+          <div class="step-photo">
+            <img src="images/12-lifestyle-flatlay.jpg" alt="AxonRing packaging and ring product flatlay" loading="lazy" />
+          </div>
           <div class="step-num" aria-label="Step 1">1</div>
           <h3 class="step-title">Choose Your Ring</h3>
           <p class="step-desc">Select Executive or Prestige and choose your size. Ships within 2 business days with free worldwide tracking.</p>
         </div>
         <div class="step fade-up fade-up-d2">
+          <div class="step-photo">
+            <img src="images/4-professional-office.jpg" alt="Professional pairing AxonRing with smartphone in office" loading="lazy" />
+          </div>
           <div class="step-num" aria-label="Step 2">2</div>
           <h3 class="step-title">Pair the App</h3>
           <p class="step-desc">Download the AxonRing app on iOS or Android. Tap your ring to your phone to pair instantly via NFC.</p>
         </div>
         <div class="step fade-up fade-up-d3">
+          <div class="step-photo">
+            <img src="images/5-coffee-shop.jpg" alt="Person loading payment cards onto AxonRing at a coffee shop" loading="lazy" />
+          </div>
           <div class="step-num" aria-label="Step 3">3</div>
           <h3 class="step-title">Load Your Life</h3>
           <p class="step-desc">Add your payment cards, access credentials, social profiles, and 2FA accounts. All encrypted on-device.</p>
         </div>
         <div class="step fade-up fade-up-d4">
+          <div class="step-photo">
+            <img src="images/2-fitness-gym.jpg" alt="Athlete tapping AxonRing at the gym" loading="lazy" />
+          </div>
           <div class="step-num" aria-label="Step 4">4</div>
           <h3 class="step-title">Tap Anything</h3>
           <p class="step-desc">Pay, unlock, authenticate, and share — all with a single tap of your finger. No phone, no wallet needed.</p>
@@ -825,6 +896,13 @@
       <p class="section-label">Specs</p>
       <h2 class="section-title fade-up" id="specs-title">Built to Last</h2>
       <p class="section-sub fade-up fade-up-d1">Premium materials. Military-grade security. Engineered for daily life.</p>
+      <div class="specs-photo-banner" role="img" aria-label="Runner on an outdoor trail showcasing AxonRing durability">
+        <img src="images/3-outdoor-running.jpg" alt="Runner on an outdoor trail wearing AxonRing, demonstrating IP68 weather resistance" loading="lazy" />
+        <div class="specs-banner-text">
+          <span>Built for Every Condition</span>
+          <span>IP68 · 256-bit AES · FIDO2</span>
+        </div>
+      </div>
       <div class="specs-grid">
         <div class="spec-card fade-up fade-up-d1">
           <div class="spec-val">IP68</div>

@@ -25,29 +25,48 @@
   <meta name="twitter:description" content="Pay, unlock, and authenticate with a wave of your hand." />
   <meta name="twitter:image" content="https://axonring.online/og-image.jpg" />
 
+  <!-- ── Mobile / Browser ── -->
+  <meta name="theme-color" content="#050508" />
+  <meta name="author" content="AxonRing" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
   <!-- ── Schema.org Structured Data ── -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebSite",
+        "name": "AxonRing",
+        "url": "https://axonring.online",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": { "@type": "EntryPoint", "urlTemplate": "https://axonring.online/?q={search_term_string}" },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
         "@type": "Organization",
         "name": "AxonRing",
         "url": "https://axonring.online",
-        "logo": "https://axonring.online/logo.svg",
-        "sameAs": []
+        "description": "Premium NFC smart ring manufacturer",
+        "email": "support@axonring.online",
+        "sameAs": ["https://axonring.com"]
       },
       {
         "@type": "Product",
         "name": "AxonRing Executive",
         "description": "Command the boardroom. The AxonRing Executive combines luxury aesthetics with powerful NFC capabilities for secure building access, contactless payments, and encrypted data sharing.",
         "brand": { "@type": "Brand", "name": "AxonRing" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "127", "bestRating": "5", "worstRating": "1" },
         "offers": {
           "@type": "Offer",
           "price": "349.99",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
-          "url": "https://buy.stripe.com/4gM7sD7sm7Aq4xDdBc4c800"
+          "url": "https://buy.stripe.com/4gM7sD7sm7Aq4xDdBc4c800",
+          "seller": { "@type": "Organization", "name": "AxonRing" }
         }
       },
       {
@@ -55,13 +74,26 @@
         "name": "AxonRing Prestige",
         "description": "For those who demand the best. The AxonRing Prestige combines premium craftsmanship with cutting-edge NFC technology, featuring encrypted payments and biometric authentication.",
         "brand": { "@type": "Brand", "name": "AxonRing" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "89", "bestRating": "5", "worstRating": "1" },
         "offers": {
           "@type": "Offer",
           "price": "459.99",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
-          "url": "https://buy.stripe.com/dRm8wH3c69Iyggl8gS4c801"
+          "url": "https://buy.stripe.com/dRm8wH3c69Iyggl8gS4c801",
+          "seller": { "@type": "Organization", "name": "AxonRing" }
         }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What ring sizes are available?", "acceptedAnswer": { "@type": "Answer", "text": "AxonRing is available in sizes 6 through 13 (US sizing). A free sizing kit is included with every order so you can confirm your fit before wearing daily." } },
+          { "@type": "Question", "name": "Does it work with Apple Pay and Google Pay?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. AxonRing supports both Apple Pay and Google Pay via the companion app, plus direct card loading for Visa, Mastercard, and Amex." } },
+          { "@type": "Question", "name": "Is the ring waterproof?", "acceptedAnswer": { "@type": "Answer", "text": "Both rings carry an IP68 rating — fully waterproof up to 1.5 meters for 30 minutes. Shower, swim, and exercise without removing your ring." } },
+          { "@type": "Question", "name": "Does it need charging?", "acceptedAnswer": { "@type": "Answer", "text": "No charging ever. AxonRing uses passive NFC technology, drawing power from the NFC reader. No battery, no charging, no dead ring." } },
+          { "@type": "Question", "name": "What is your return policy?", "acceptedAnswer": { "@type": "Answer", "text": "30-day no-questions-asked returns. Executive includes a 1-year warranty; Prestige includes 2 years." } },
+          { "@type": "Question", "name": "How secure is my data?", "acceptedAnswer": { "@type": "Answer", "text": "All data is encrypted with AES-256-GCM. The ring requires biometric or PIN verification for sensitive operations and supports remote wipe if lost." } }
+        ]
       }
     ]
   }
@@ -517,6 +549,14 @@
       .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
       .products-grid { grid-template-columns: 1fr; }
     }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -674,7 +714,7 @@
 
       <div class="lifestyle-grid">
         <article class="lifestyle-card fade-up fade-up-d1">
-          <img src="images/1-morning-wakeup.jpg" alt="Morning wake-up with AxonRing tracking sleep" loading="lazy" />
+          <img src="1-morning-wakeup.jpg" alt="Morning wake-up with AxonRing tracking sleep" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">01 — MORNING</span>
             <h3 class="lifestyle-title">The Quiet Wake</h3>
@@ -683,7 +723,7 @@
         </article>
 
         <article class="lifestyle-card fade-up fade-up-d2">
-          <img src="images/2-fitness-gym.jpg" alt="Fitness tracking at the gym with AxonRing" loading="lazy" />
+          <img src="2-fitness-gym.jpg" alt="Fitness tracking at the gym with AxonRing" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">02 — TRAIN</span>
             <h3 class="lifestyle-title">Lift Without Limits</h3>
@@ -692,7 +732,7 @@
         </article>
 
         <article class="lifestyle-card fade-up fade-up-d3">
-          <img src="images/3-outdoor-running.jpg" alt="Outdoor running with AxonRing tracking pace" loading="lazy" />
+          <img src="3-outdoor-running.jpg" alt="Outdoor running with AxonRing tracking pace" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">03 — RUN</span>
             <h3 class="lifestyle-title">Run Phone-Free</h3>
@@ -701,7 +741,7 @@
         </article>
 
         <article class="lifestyle-card fade-up fade-up-d4">
-          <img src="images/4-professional-office.jpg" alt="Professional office work with AxonRing notifications" loading="lazy" />
+          <img src="4-professional-office.jpg" alt="Professional office work with AxonRing notifications" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">04 — WORK</span>
             <h3 class="lifestyle-title">Discreet Notifications</h3>
@@ -710,7 +750,7 @@
         </article>
 
         <article class="lifestyle-card fade-up fade-up-d1">
-          <img src="images/5-coffee-shop.jpg" alt="Coffee shop contactless payment with AxonRing" loading="lazy" />
+          <img src="5-coffee-shop.jpg" alt="Coffee shop contactless payment with AxonRing" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">05 — PAY</span>
             <h3 class="lifestyle-title">Tap to Pay</h3>
@@ -719,7 +759,7 @@
         </article>
 
         <article class="lifestyle-card fade-up fade-up-d2">
-          <img src="images/6-meditation-mindfulness.jpg" alt="Meditation and mindfulness with AxonRing" loading="lazy" />
+          <img src="6-meditation-mindfulness.jpg" alt="Meditation and mindfulness with AxonRing" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">06 — BREATHE</span>
             <h3 class="lifestyle-title">Stillness Tracked</h3>
@@ -728,7 +768,7 @@
         </article>
 
         <article class="lifestyle-card fade-up fade-up-d3">
-          <img src="images/7-travel-airport.jpg" alt="Travel and airport boarding with AxonRing" loading="lazy" />
+          <img src="7-travel-airport.jpg" alt="Travel and airport boarding with AxonRing" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">07 — TRAVEL</span>
             <h3 class="lifestyle-title">Boarding Pass on Hand</h3>
@@ -737,7 +777,7 @@
         </article>
 
         <article class="lifestyle-card fade-up fade-up-d4">
-          <img src="images/8-evening-relaxation.jpg" alt="Evening reading relaxation with AxonRing" loading="lazy" />
+          <img src="8-evening-relaxation.jpg" alt="Evening reading relaxation with AxonRing" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">08 — UNWIND</span>
             <h3 class="lifestyle-title">Focus Mode</h3>
@@ -746,7 +786,7 @@
         </article>
 
         <article class="lifestyle-card fade-up fade-up-d1">
-          <img src="images/9-social-dinner.jpg" alt="Social dinner sharing with AxonRing" loading="lazy" />
+          <img src="9-social-dinner.jpg" alt="Social dinner sharing with AxonRing" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">09 — CONNECT</span>
             <h3 class="lifestyle-title">Skip the Card</h3>
@@ -755,7 +795,7 @@
         </article>
 
         <article class="lifestyle-card fade-up fade-up-d2">
-          <img src="images/10-health-cycling.jpg" alt="Health tracking and cycling with AxonRing" loading="lazy" />
+          <img src="10-health-cycling.jpg" alt="Health tracking and cycling with AxonRing" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">10 — RIDE</span>
             <h3 class="lifestyle-title">Performance Telemetry</h3>
@@ -764,7 +804,7 @@
         </article>
 
         <article class="lifestyle-card fade-up fade-up-d3">
-          <img src="images/11-product-hero.jpg" alt="AxonRing product close-up hero shot" loading="lazy" />
+          <img src="11-product-hero.jpg" alt="AxonRing product close-up hero shot" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">11 — DETAIL</span>
             <h3 class="lifestyle-title">Engineering, Visible</h3>
@@ -773,7 +813,7 @@
         </article>
 
         <article class="lifestyle-card fade-up fade-up-d4">
-          <img src="images/12-lifestyle-flatlay.jpg" alt="AxonRing lifestyle flat lay packaging" loading="lazy" />
+          <img src="12-lifestyle-flatlay.jpg" alt="AxonRing lifestyle flat lay packaging" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">12 — UNBOX</span>
             <h3 class="lifestyle-title">Focus. Balance. Thrive.</h3>
@@ -884,7 +924,7 @@
             <a href="https://buy.stripe.com/4gM7sD7sm7Aq4xDdBc4c800"
                class="btn-buy btn-buy-primary"
                aria-label="Buy AxonRing Executive for $349"
-               rel="noopener">
+               target="_blank" rel="noopener noreferrer">
               Buy Executive — $349
             </a>
             <div class="secure-note" aria-label="Secure payment information">
@@ -920,7 +960,7 @@
             <a href="https://buy.stripe.com/dRm8wH3c69Iyggl8gS4c801"
                class="btn-buy btn-buy-gold"
                aria-label="Buy AxonRing Prestige for $459"
-               rel="noopener">
+               target="_blank" rel="noopener noreferrer">
               Buy Prestige — $459
             </a>
             <div class="secure-note">
@@ -1058,10 +1098,10 @@
       <h2 class="final-cta-title fade-up" id="final-cta-title">Ready to Wear<br/><span style="background:linear-gradient(135deg,var(--purple-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">the Future?</span></h2>
       <p class="final-cta-sub fade-up fade-up-d1">Join thousands of people who've upgraded their daily life with AxonRing. Free shipping. 30-day returns. No subscriptions.</p>
       <div class="hero-ctas fade-up fade-up-d2">
-        <a href="https://buy.stripe.com/4gM7sD7sm7Aq4xDdBc4c800" class="btn-primary" aria-label="Buy AxonRing Executive for $349">
+        <a href="https://buy.stripe.com/4gM7sD7sm7Aq4xDdBc4c800" class="btn-primary" aria-label="Buy AxonRing Executive for $349" target="_blank" rel="noopener noreferrer">
           Executive — $349
         </a>
-        <a href="https://buy.stripe.com/dRm8wH3c69Iyggl8gS4c801" class="btn-primary" style="background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--black)" aria-label="Buy AxonRing Prestige for $459">
+        <a href="https://buy.stripe.com/dRm8wH3c69Iyggl8gS4c801" class="btn-primary" style="background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--black)" aria-label="Buy AxonRing Prestige for $459" target="_blank" rel="noopener noreferrer">
           Prestige — $459
         </a>
       </div>

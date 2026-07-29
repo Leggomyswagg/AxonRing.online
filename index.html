@@ -7,7 +7,7 @@
   <!-- ── SEO ── -->
   <title>AxonRing — The NFC Smart Ring for Payments, Access & Identity</title>
   <meta name="description" content="AxonRing is the premium NFC smart ring for contactless payments, secure access control, and encrypted identity. Executive ($349) and Prestige ($459) editions. Free shipping." />
-  <meta name="keywords" content="NFC smart ring, contactless payment ring, smart ring, NFC ring, access control ring, biometric ring, wearable payments" />
+  <meta name="keywords" content="NFC smart ring, NFC ring, digital business card ring, contact sharing ring, passive NFC wearable, no battery smart ring" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://axonring.online/" />
 
@@ -15,7 +15,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://axonring.online/" />
   <meta property="og:title" content="AxonRing — Premium NFC Smart Ring" />
-  <meta property="og:description" content="Pay, unlock, and authenticate with a wave of your hand. The world's most advanced NFC smart ring." />
+  <meta property="og:description" content="Share your contact, open links, and trigger automations with a tap. An NFC ring with no battery and no subscription." />
   <meta property="og:image" content="https://axonring.online/og-image.jpg" />
   <meta property="og:site_name" content="AxonRing" />
 
@@ -40,7 +40,7 @@
       {
         "@type": "Product",
         "name": "AxonRing Executive",
-        "description": "Command the boardroom. The AxonRing Executive combines luxury aesthetics with powerful NFC capabilities for secure building access, contactless payments, and encrypted data sharing.",
+        "description": "Matte black ceramic with a minimal profile. The everyday NFC ring for sharing your contact, links, and phone shortcuts with a tap.",
         "brand": { "@type": "Brand", "name": "AxonRing" },
         "offers": {
           "@type": "Offer",
@@ -53,7 +53,7 @@
       {
         "@type": "Product",
         "name": "AxonRing Prestige",
-        "description": "For those who demand the best. The AxonRing Prestige combines premium craftsmanship with cutting-edge NFC technology, featuring encrypted payments and biometric authentication.",
+        "description": "Our flagship finish — polished ceramic with gold detailing. The same NFC capabilities in our most refined presentation.",
         "brand": { "@type": "Brand", "name": "AxonRing" },
         "offers": {
           "@type": "Offer",
@@ -230,6 +230,13 @@
     .ring-inner-hero { width: 140px; height: 140px; border-radius: 50%; border: 2px solid rgba(6,182,212,0.3); }
     .ring-center { position: absolute; width: 14px; height: 14px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 16px var(--cyan), 0 0 32px rgba(6,182,212,0.5); }
 
+    .hero-bullets {
+      list-style: none; margin-top: 8px; margin-bottom: 40px;
+      display: flex; flex-direction: column; gap: 8px; align-items: center;
+    }
+    .hero-bullets li { font-size: 13px; color: var(--gray); letter-spacing: 0.02em; }
+    .hero-bullets li::before { content: '\2713  '; color: var(--cyan); font-weight: 700; }
+
     /* ── Trust bar ── */
     .trust-bar {
       display: flex; align-items: center; justify-content: center;
@@ -271,6 +278,19 @@
     }
     .feature-title { font-family: var(--ff-display); font-size: 18px; font-weight: 700; margin-bottom: 8px; }
     .feature-desc { color: var(--gray); font-size: 14px; line-height: 1.7; }
+
+    .group-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--cyan); margin-bottom: 20px; text-align: center;
+    }
+    .feature-card-setup { opacity: 0.85; border-style: dashed; }
+    .honest-note {
+      margin-top: 48px; padding: 24px 28px; border-radius: 16px;
+      border: 1px solid var(--border); background: rgba(17,14,31,0.6);
+      font-size: 14px; color: var(--gray); line-height: 1.8; max-width: 760px;
+      margin-left: auto; margin-right: auto;
+    }
+    .honest-note strong { color: var(--white); }
 
     /* ── How it works ── */
     .how-bg { background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(107,70,193,0.1) 0%, transparent 70%); }
@@ -368,6 +388,29 @@
     }
     .reviewer-name { font-weight: 600; font-size: 14px; }
     .reviewer-title { color: var(--muted); font-size: 12px; margin-top: 2px; }
+
+    .founder-card {
+      max-width: 680px; margin: 0 auto; padding: 40px;
+      background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+    }
+    .founder-intro { color: var(--gray); font-size: 15px; line-height: 1.8; margin-bottom: 24px; }
+    .founder-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
+    .founder-list li { color: var(--gray); font-size: 14px; line-height: 1.8; padding-left: 22px; position: relative; }
+    .founder-list li::before { content: '\2713'; position: absolute; left: 0; color: var(--cyan); font-weight: 700; }
+    .founder-list strong { color: var(--white); font-weight: 600; }
+    .founder-signoff { text-align: right; color: var(--cyan); font-family: var(--ff-display); font-size: 16px; font-weight: 600; }
+
+    .checkout-answers {
+      max-width: 900px; margin: 48px auto 0;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    }
+    .ca-item {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 20px; display: flex; flex-direction: column; gap: 8px;
+    }
+    .ca-q { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--cyan); }
+    .ca-a { font-size: 13px; color: var(--gray); line-height: 1.7; }
+    @media (max-width: 900px) { .checkout-answers { grid-template-columns: 1fr; } }
 
     /* ── FAQ ── */
     .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
@@ -546,17 +589,17 @@
   <section class="hero" aria-label="Hero">
     <div class="hero-eyebrow">
       <div class="hero-eyebrow-dot" aria-hidden="true"></div>
-      Now Available — Limited Inventory
+      Now Shipping — Free Sizing Kit With Every Order
     </div>
 
     <h1 class="hero-title">
-      Your Entire Life<br/>
-      <span class="grad">On Your Finger</span>
+      An NFC Ring That<br/>
+      <span class="grad">Shares, Unlocks & Triggers</span>
     </h1>
 
     <p class="hero-sub">
-      Pay, unlock, authenticate, and share — all with a single wave of your hand.
-      The world's most advanced NFC smart ring, built for those who demand more.
+      A passive NFC ring you wear like jewellery. Tap it to any NFC phone to share your
+      contact card, open a link, or trigger a phone automation. No battery. No charging. Ever.
     </p>
 
     <div class="hero-ring-wrap" aria-hidden="true">
@@ -573,20 +616,26 @@
     <div class="hero-ctas">
       <a href="#products" class="btn-primary" aria-label="Shop AxonRing products">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 001.97-1.67l1.38-7.33H6"/></svg>
-        Shop Now — From $349
+        Shop the Ring — From $349
       </a>
-      <a href="#features" class="btn-secondary" aria-label="Learn about AxonRing features">
-        Explore Features
+      <a href="#how-it-works" class="btn-secondary" aria-label="See how AxonRing works">
+        How It Works
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
     </div>
+
+    <ul class="hero-bullets" aria-label="Key facts">
+      <li>Works with NFC phones — no app needed on their side</li>
+      <li>No battery, no charging, waterproof for daily wear</li>
+      <li>Free shipping · 30-day returns · No subscription</li>
+    </ul>
   </section>
 
   <!-- ── TRUST BAR ── -->
   <div class="trust-bar" role="complementary" aria-label="Trust indicators">
     <div class="trust-item">
       <svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-      <span>AES-256 Encrypted</span>
+      <span>No Battery — Never Charges</span>
     </div>
     <div class="trust-item">
       <svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
@@ -602,7 +651,7 @@
     </div>
     <div class="trust-item">
       <svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      <span>1-Year Warranty</span>
+      <span>1–2 Year Warranty</span>
     </div>
   </div>
 
@@ -610,58 +659,64 @@
   <section id="features" aria-labelledby="features-title">
     <div class="container">
       <p class="section-label">Capabilities</p>
-      <h2 class="section-title fade-up" id="features-title">Everything You Need,<br/>Nothing You Don't</h2>
-      <p class="section-sub fade-up fade-up-d1">24 NFC capabilities built into a ring you'll never want to take off.</p>
+      <h2 class="section-title fade-up" id="features-title">What's Included —<br/>And What Needs Setup</h2>
+      <p class="section-sub fade-up fade-up-d1">We list these separately so you know exactly what works the moment your ring arrives.</p>
 
+      <p class="group-label fade-up">Included out of the box</p>
       <div class="features-grid">
         <article class="feature-card fade-up fade-up-d1">
           <div class="feature-icon" style="background:rgba(16,185,129,0.12)">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 9h4M7 13h8"/></svg>
           </div>
-          <h3 class="feature-title">Contactless Payments</h3>
-          <p class="feature-desc">Tap to pay at any NFC terminal worldwide. Supports Visa, Mastercard, and Amex. No phone needed — your ring is your wallet.</p>
+          <h3 class="feature-title">Digital Business Card</h3>
+          <p class="feature-desc">Tap your ring to any NFC phone and your contact card appears — name, number, email, socials. They don't need an app installed.</p>
         </article>
 
         <article class="feature-card fade-up fade-up-d2">
           <div class="feature-icon" style="background:rgba(59,130,246,0.12)">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
           </div>
-          <h3 class="feature-title">Secure Access Control</h3>
-          <p class="feature-desc">Unlock office doors, hotel rooms, gyms, and secure areas with a wave. Compatible with all major NFC access systems.</p>
+          <h3 class="feature-title">Link Sharing</h3>
+          <p class="feature-desc">Store any URL — your website, LinkedIn, Instagram, portfolio, menu, or payment link — and open it on any phone with a tap.</p>
         </article>
 
         <article class="feature-card fade-up fade-up-d3">
-          <div class="feature-icon" style="background:rgba(139,92,246,0.12)">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-          </div>
-          <h3 class="feature-title">Two-Factor Authentication</h3>
-          <p class="feature-desc">Hardware FIDO2/WebAuthn security key. Sign in to any supported account with a tap — more secure than SMS codes.</p>
-        </article>
-
-        <article class="feature-card fade-up fade-up-d1">
-          <div class="feature-icon" style="background:rgba(236,72,153,0.12)">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#EC4899" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </div>
-          <h3 class="feature-title">Instant Social Sharing</h3>
-          <p class="feature-desc">Share your contact, LinkedIn, or any social profile with a single tap. Replace business cards forever.</p>
-        </article>
-
-        <article class="feature-card fade-up fade-up-d2">
           <div class="feature-icon" style="background:rgba(245,158,11,0.12)">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
           </div>
-          <h3 class="feature-title">NFC Automations</h3>
-          <p class="feature-desc">Trigger smart home scenes, launch apps, start playlists, and more. Program any workflow to a tap or gesture.</p>
+          <h3 class="feature-title">Phone Automations</h3>
+          <p class="feature-desc">Trigger iPhone Shortcuts or Android routines by tapping your own phone — silence it, start a timer, open an app, text someone.</p>
         </article>
 
-        <article class="feature-card fade-up fade-up-d3">
-          <div class="feature-icon" style="background:rgba(6,182,212,0.12)">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <article class="feature-card fade-up fade-up-d1">
+          <div class="feature-icon" style="background:rgba(139,92,246,0.12)">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" aria-hidden="true"><path d="M3 12a9 9 0 019-9 9 9 0 016.36 2.64L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 01-9 9 9 9 0 01-6.36-2.64L3 16"/><path d="M3 21v-5h5"/></svg>
           </div>
-          <h3 class="feature-title">Smart Home Control</h3>
-          <p class="feature-desc">Control lights, locks, thermostats, and appliances with a wave. Works with HomeKit, Google Home, and SmartThings.</p>
+          <h3 class="feature-title">Rewritable Anytime</h3>
+          <p class="feature-desc">Change what your ring does whenever you like, using free NFC apps. Write, erase, and rewrite — rated for years of use.</p>
         </article>
       </div>
+
+      <p class="group-label fade-up" style="margin-top:56px">Possible with setup — depends on systems you already use</p>
+      <div class="features-grid">
+        <article class="feature-card feature-card-setup fade-up fade-up-d1">
+          <div class="feature-icon" style="background:rgba(107,114,128,0.15)">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+          <h3 class="feature-title">Building &amp; Door Access</h3>
+          <p class="feature-desc">Some NFC access systems let the ring be enrolled as a credential. This requires your building or system administrator to support and enroll it — not all systems do.</p>
+        </article>
+
+        <article class="feature-card feature-card-setup fade-up fade-up-d2">
+          <div class="feature-icon" style="background:rgba(107,114,128,0.15)">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 class="feature-title">Smart Home Triggers</h3>
+          <p class="feature-desc">Pair ring taps with smart home routines through your phone's automation apps — tap to run a "goodnight" scene. Requires your existing smart home setup.</p>
+        </article>
+      </div>
+
+      <p class="honest-note fade-up"><strong>What it doesn't do:</strong> this ring has no battery, screen, sensors, or payment chip. It does not make card payments at terminals, track health metrics, or work as a hardware security key. Any passive NFC ring claiming those is overpromising — those need a different, battery-powered category of product.</p>
     </div>
   </section>
 
@@ -670,15 +725,15 @@
     <div class="container">
       <p class="section-label">In Your Day</p>
       <h2 class="section-title fade-up" id="lifestyle-title">Designed for Every Moment</h2>
-      <p class="section-sub fade-up fade-up-d1">From your morning ritual to your evening unwind — AxonRing belongs in every part of your day.</p>
+      <p class="section-sub fade-up fade-up-d1">A ring with no battery fits every part of your day — because there's never a reason to take it off.</p>
 
       <div class="lifestyle-grid">
         <article class="lifestyle-card fade-up fade-up-d1">
           <img src="images/1-morning-wakeup.jpg" alt="Morning wake-up with AxonRing tracking sleep" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">01 — MORNING</span>
-            <h3 class="lifestyle-title">The Quiet Wake</h3>
-            <p class="lifestyle-desc">Sleep tracking, gentle alarms, and your day's first briefing — all without reaching for your phone.</p>
+            <h3 class="lifestyle-title">Worn From Waking</h3>
+            <p class="lifestyle-desc">No charging cradle on the nightstand. The ring never comes off — because it never needs to.</p>
           </div>
         </article>
 
@@ -686,8 +741,8 @@
           <img src="images/2-fitness-gym.jpg" alt="Fitness tracking at the gym with AxonRing" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">02 — TRAIN</span>
-            <h3 class="lifestyle-title">Lift Without Limits</h3>
-            <p class="lifestyle-desc">Heart rate, reps, and recovery metrics tracked precisely — sweat-proof and built to keep up.</p>
+            <h3 class="lifestyle-title">Built for the Gym</h3>
+            <p class="lifestyle-desc">Sweat-proof, knock-proof ceramic. Wear it through every set without a second thought.</p>
           </div>
         </article>
 
@@ -695,8 +750,8 @@
           <img src="images/3-outdoor-running.jpg" alt="Outdoor running with AxonRing tracking pace" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">03 — RUN</span>
-            <h3 class="lifestyle-title">Run Phone-Free</h3>
-            <p class="lifestyle-desc">GPS, pace, and route mapping built into the ring. Leave the phone behind.</p>
+            <h3 class="lifestyle-title">Out the Door</h3>
+            <p class="lifestyle-desc">No battery anxiety, ever. The ring is ready whenever you are — trail, road, or track.</p>
           </div>
         </article>
 
@@ -704,8 +759,8 @@
           <img src="images/4-professional-office.jpg" alt="Professional office work with AxonRing notifications" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">04 — WORK</span>
-            <h3 class="lifestyle-title">Discreet Notifications</h3>
-            <p class="lifestyle-desc">Calendar, email, and VIP filtering — surface only what matters, never a distraction.</p>
+            <h3 class="lifestyle-title">The New Business Card</h3>
+            <p class="lifestyle-desc">A client taps your ring — your contact card appears on their phone. No fumbling, no paper.</p>
           </div>
         </article>
 
@@ -713,8 +768,8 @@
           <img src="images/5-coffee-shop.jpg" alt="Coffee shop contactless payment with AxonRing" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">05 — PAY</span>
-            <h3 class="lifestyle-title">Tap to Pay</h3>
-            <p class="lifestyle-desc">Visa, Mastercard, and Amex — your morning coffee is one gesture away.</p>
+            <h3 class="lifestyle-title">Share in a Tap</h3>
+            <p class="lifestyle-desc">Your payment link, menu, or portfolio — opened on anyone's phone in one motion.</p>
           </div>
         </article>
 
@@ -722,8 +777,8 @@
           <img src="images/6-meditation-mindfulness.jpg" alt="Meditation and mindfulness with AxonRing" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">06 — BREATHE</span>
-            <h3 class="lifestyle-title">Stillness Tracked</h3>
-            <p class="lifestyle-desc">Guided sessions, stress detection, and biofeedback — find your center, measured.</p>
+            <h3 class="lifestyle-title">Tap to Focus</h3>
+            <p class="lifestyle-desc">Program a tap to silence your phone and start a meditation timer. One gesture into stillness.</p>
           </div>
         </article>
 
@@ -731,8 +786,8 @@
           <img src="images/7-travel-airport.jpg" alt="Travel and airport boarding with AxonRing" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">07 — TRAVEL</span>
-            <h3 class="lifestyle-title">Boarding Pass on Hand</h3>
-            <p class="lifestyle-desc">Boarding info, gate alerts, and luggage tracking — without digging through bags.</p>
+            <h3 class="lifestyle-title">Travels Light</h3>
+            <p class="lifestyle-desc">Store your emergency contact and hotel link on the ring. Less to carry, less to lose.</p>
           </div>
         </article>
 
@@ -740,8 +795,8 @@
           <img src="images/8-evening-relaxation.jpg" alt="Evening reading relaxation with AxonRing" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">08 — UNWIND</span>
-            <h3 class="lifestyle-title">Focus Mode</h3>
-            <p class="lifestyle-desc">DND scheduling and focus enforcement — engineered for deeper sleep and presence.</p>
+            <h3 class="lifestyle-title">Evenings, Unplugged</h3>
+            <p class="lifestyle-desc">Tap your phone once — DND on, lights routine started. Then put the phone away.</p>
           </div>
         </article>
 
@@ -758,8 +813,8 @@
           <img src="images/10-health-cycling.jpg" alt="Health tracking and cycling with AxonRing" loading="lazy" />
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">10 — RIDE</span>
-            <h3 class="lifestyle-title">Performance Telemetry</h3>
-            <p class="lifestyle-desc">Cadence, elevation, power output — all on your finger, all in real-time.</p>
+            <h3 class="lifestyle-title">Ride Without Worry</h3>
+            <p class="lifestyle-desc">Waterproof, dust-proof, and nothing to charge. It keeps up with every ride.</p>
           </div>
         </article>
 
@@ -768,7 +823,7 @@
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">11 — DETAIL</span>
             <h3 class="lifestyle-title">Engineering, Visible</h3>
-            <p class="lifestyle-desc">Premium materials. Sensor array. Built to a standard you can feel.</p>
+            <p class="lifestyle-desc">Sealed ceramic band, no ports, no seams. The NFC chip lives invisibly inside.</p>
           </div>
         </article>
 
@@ -777,7 +832,7 @@
           <div class="lifestyle-overlay">
             <span class="lifestyle-num">12 — UNBOX</span>
             <h3 class="lifestyle-title">Focus. Balance. Thrive.</h3>
-            <p class="lifestyle-desc">Premium packaging. Sizing kit. Concierge setup. A thoughtful, complete system.</p>
+            <p class="lifestyle-desc">Premium packaging, free sizing kit, and a written setup guide in every box.</p>
           </div>
         </article>
       </div>
@@ -789,28 +844,28 @@
     <div class="container">
       <p class="section-label">Setup</p>
       <h2 class="section-title fade-up" id="how-title">Up and Running in Minutes</h2>
-      <p class="section-sub fade-up fade-up-d1">No complicated setup. No subscription required. Just tap and go.</p>
+      <p class="section-sub fade-up fade-up-d1">About five minutes with a free NFC app. No subscription, no account required.</p>
 
       <div class="steps">
         <div class="step fade-up fade-up-d1">
           <div class="step-num" aria-label="Step 1">1</div>
-          <h3 class="step-title">Choose Your Ring</h3>
-          <p class="step-desc">Select Executive or Prestige and choose your size. Ships within 2 business days with free worldwide tracking.</p>
+          <h3 class="step-title">Order &amp; Get Sized</h3>
+          <p class="step-desc">Pick Executive or Prestige. We ship a free sizing kit first (5–10 business days) so your ring fits perfectly.</p>
         </div>
         <div class="step fade-up fade-up-d2">
           <div class="step-num" aria-label="Step 2">2</div>
-          <h3 class="step-title">Pair the App</h3>
-          <p class="step-desc">Download the AxonRing app on iOS or Android. Tap your ring to your phone to pair instantly via NFC.</p>
+          <h3 class="step-title">Confirm &amp; Receive</h3>
+          <p class="step-desc">Tell us your size and your ring ships within 7–14 business days, tracked worldwide.</p>
         </div>
         <div class="step fade-up fade-up-d3">
           <div class="step-num" aria-label="Step 3">3</div>
-          <h3 class="step-title">Load Your Life</h3>
-          <p class="step-desc">Add your payment cards, access credentials, social profiles, and 2FA accounts. All encrypted on-device.</p>
+          <h3 class="step-title">Program It Once</h3>
+          <p class="step-desc">Use a free NFC app (NFC Tools, iOS &amp; Android) to write your contact card, link, or automation. Guide included.</p>
         </div>
         <div class="step fade-up fade-up-d4">
           <div class="step-num" aria-label="Step 4">4</div>
-          <h3 class="step-title">Tap Anything</h3>
-          <p class="step-desc">Pay, unlock, authenticate, and share — all with a single tap of your finger. No phone, no wallet needed.</p>
+          <h3 class="step-title">Tap Any NFC Phone</h3>
+          <p class="step-desc">Hold the ring near the top (iPhone) or back (Android) of a phone. Your card or link opens — no app on their side.</p>
         </div>
       </div>
     </div>
@@ -821,31 +876,31 @@
     <div class="container">
       <p class="section-label">Specs</p>
       <h2 class="section-title fade-up" id="specs-title">Built to Last</h2>
-      <p class="section-sub fade-up fade-up-d1">Premium materials. Military-grade security. Engineered for daily life.</p>
+      <p class="section-sub fade-up fade-up-d1">Sealed ceramic. Passive NFC chip. Nothing to charge, nothing to break.</p>
       <div class="specs-grid">
         <div class="spec-card fade-up fade-up-d1">
-          <div class="spec-val">IP68</div>
-          <div class="spec-label">Water & Dust Resistance</div>
+          <div class="spec-val">Water<br/>Resistant</div>
+          <div class="spec-label">Showers, Swimming, Daily Wear</div>
         </div>
         <div class="spec-card fade-up fade-up-d2">
-          <div class="spec-val">256-bit</div>
-          <div class="spec-label">AES Encryption</div>
+          <div class="spec-val">NTAG</div>
+          <div class="spec-label">NFC Chip (ISO 14443)</div>
         </div>
         <div class="spec-card fade-up fade-up-d3">
-          <div class="spec-val">8GB</div>
-          <div class="spec-label">On-Ring Storage</div>
+          <div class="spec-val">Zero</div>
+          <div class="spec-label">Batteries — Never Charges</div>
         </div>
         <div class="spec-card fade-up fade-up-d1">
-          <div class="spec-val">24+</div>
-          <div class="spec-label">NFC Capabilities</div>
+          <div class="spec-val">iOS +<br/>Android</div>
+          <div class="spec-label">iPhone 7+ · NFC Androids</div>
         </div>
         <div class="spec-card fade-up fade-up-d2">
-          <div class="spec-val">FIDO2</div>
-          <div class="spec-label">Security Standard</div>
+          <div class="spec-val">6 — 13</div>
+          <div class="spec-label">US Ring Sizes</div>
         </div>
         <div class="spec-card fade-up fade-up-d3">
-          <div class="spec-val">Zirconia</div>
-          <div class="spec-label">Ring Material</div>
+          <div class="spec-val">Ceramic</div>
+          <div class="spec-label">Hypoallergenic Composite</div>
         </div>
       </div>
     </div>
@@ -856,7 +911,7 @@
     <div class="container">
       <p class="section-label">Shop</p>
       <h2 class="section-title fade-up" id="products-title">Choose Your AxonRing</h2>
-      <p class="section-sub fade-up fade-up-d1">Both rings include free shipping, 30-day returns, and a 1-year warranty. Secure checkout via Stripe.</p>
+      <p class="section-sub fade-up fade-up-d1">Both include free shipping and 30-day returns. One-time purchase, no subscription. Secure checkout via Stripe.</p>
 
       <div class="products-grid">
         <!-- Executive -->
@@ -868,18 +923,18 @@
           </div>
           <div class="product-body">
             <h3 class="product-name" id="executive-name">AxonRing Executive</h3>
-            <p class="product-tagline">Command the boardroom. Luxury aesthetics with powerful NFC for secure access, payments, and encrypted data sharing.</p>
+            <p class="product-tagline">Matte black ceramic with a minimal profile. The everyday NFC ring for sharing your contact, links, and phone shortcuts.</p>
             <div class="product-price">
               <span class="product-price-amount">$349</span>
               <span class="product-price-period">one-time</span>
             </div>
             <ul class="product-features" aria-label="Executive features">
-              <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>Contactless payments worldwide</li>
-              <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>NFC access control</li>
-              <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>FIDO2 two-factor authentication</li>
-              <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>8GB encrypted storage</li>
-              <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>IP68 waterproof rating</li>
-              <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>Free shipping + 1-year warranty</li>
+              <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>Digital business card &amp; link sharing</li>
+              <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>Phone automation triggers</li>
+              <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>Rewritable — change it anytime</li>
+              <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>Waterproof · No battery ever</li>
+              <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>Free sizing kit shipped first</li>
+              <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>1-year warranty · Free shipping</li>
             </ul>
             <a href="https://buy.stripe.com/4gM7sD7sm7Aq4xDdBc4c800"
                class="btn-buy btn-buy-primary"
@@ -904,17 +959,17 @@
           </div>
           <div class="product-body">
             <h3 class="product-name" id="prestige-name" style="background:linear-gradient(135deg,#D4AF37,#F0D060);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">AxonRing Prestige</h3>
-            <p class="product-tagline">For those who demand the best. Premium craftsmanship with cutting-edge NFC, encrypted payments, and biometric authentication.</p>
+            <p class="product-tagline">Our flagship finish — polished ceramic with gold detailing. The same NFC capabilities in our most refined presentation.</p>
             <div class="product-price">
               <span class="product-price-amount" style="background:linear-gradient(135deg,#D4AF37,#F0D060);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">$459</span>
               <span class="product-price-period">one-time</span>
             </div>
             <ul class="product-features" aria-label="Prestige features">
               <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>Everything in Executive</li>
-              <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>Biometric authentication layer</li>
-              <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>Premium zirconia ceramic body</li>
-              <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>PGP hardware signing</li>
-              <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>Priority support + concierge setup</li>
+              <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>Polished ceramic with gold detail</li>
+              <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>Premium gift presentation box</li>
+              <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>Priority email support</li>
+              <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>Free sizing kit shipped first</li>
               <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="#10B981" stroke-width="2" aria-hidden="true"><polyline points="2 6 5 9 10 3"/></svg></div>2-year extended warranty</li>
             </ul>
             <a href="https://buy.stripe.com/dRm8wH3c69Iyggl8gS4c801"
@@ -930,70 +985,52 @@
           </div>
         </article>
       </div>
+
+      <div class="checkout-answers fade-up" aria-label="Before you buy">
+        <div class="ca-item">
+          <span class="ca-q">Sizing</span>
+          <span class="ca-a">A free sizing kit ships first — confirm your fit before your ring ships. US sizes 6–13.</span>
+        </div>
+        <div class="ca-item">
+          <span class="ca-q">Delivery</span>
+          <span class="ca-a">Sizing kit in 5–10 business days; ring ships 7–14 business days after you confirm. Tracked worldwide.</span>
+        </div>
+        <div class="ca-item">
+          <span class="ca-q">Phone compatibility</span>
+          <span class="ca-a">Reads on iPhone 7 and newer, and Android phones with NFC. No app needed on their phone.</span>
+        </div>
+        <div class="ca-item">
+          <span class="ca-q">Setup</span>
+          <span class="ca-a">About 5 minutes with a free NFC app. Step-by-step guide included in every box.</span>
+        </div>
+        <div class="ca-item">
+          <span class="ca-q">After purchase</span>
+          <span class="ca-a">Instant Stripe receipt by email, then sizing kit dispatch confirmation with tracking within 2 business days.</span>
+        </div>
+        <div class="ca-item">
+          <span class="ca-q">Returns</span>
+          <span class="ca-a">30 days, no questions asked, full refund. Warranty covers chip failure — 1 year (Executive) / 2 years (Prestige).</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ── REVIEWS ── -->
+  <!-- ── FOUNDER NOTE ── -->
   <section id="reviews" aria-labelledby="reviews-title">
     <div class="container">
-      <p class="section-label">Reviews</p>
-      <h2 class="section-title fade-up" id="reviews-title">Loved by Thousands</h2>
-      <p class="section-sub fade-up fade-up-d1">Join professionals, executives, and tech enthusiasts who've made the switch.</p>
+      <p class="section-label">A Note From the Founder</p>
+      <h2 class="section-title fade-up" id="reviews-title">New Brand.<br/>Honest Product.</h2>
+      <p class="section-sub fade-up fade-up-d1">We'd rather tell you the truth than show you reviews we made up.</p>
 
-      <div class="reviews-grid">
-        <article class="review-card fade-up fade-up-d1">
-          <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <blockquote class="review-text">"I haven't touched my wallet or phone to pay in three weeks. The Executive paid for itself in convenience alone. The build quality is exceptional."</blockquote>
-          <div class="reviewer">
-            <div class="reviewer-avatar" aria-hidden="true">M</div>
-            <div>
-              <div class="reviewer-name">Marcus T.</div>
-              <div class="reviewer-title">VP of Operations, NYC</div>
-            </div>
-          </div>
-        </article>
-
-        <article class="review-card fade-up fade-up-d2">
-          <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <blockquote class="review-text">"The Prestige is stunning. The gold finish is beautiful and the biometric layer gives me peace of mind. Setup took under 10 minutes. Absolutely worth it."</blockquote>
-          <div class="reviewer">
-            <div class="reviewer-avatar" aria-hidden="true">S</div>
-            <div>
-              <div class="reviewer-name">Sophia K.</div>
-              <div class="reviewer-title">Founder & CEO, London</div>
-            </div>
-          </div>
-        </article>
-
-        <article class="review-card fade-up fade-up-d3">
-          <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <blockquote class="review-text">"Used it at the subway, paid for coffee, unlocked my office, and verified my GitHub login — all before 9am. This thing is the future. Can't imagine going back."</blockquote>
-          <div class="reviewer">
-            <div class="reviewer-avatar" aria-hidden="true">D</div>
-            <div>
-              <div class="reviewer-name">David R.</div>
-              <div class="reviewer-title">Senior Engineer, San Francisco</div>
-            </div>
-          </div>
-        </article>
+      <div class="founder-card fade-up fade-up-d1">
+        <p class="founder-intro">AxonRing launched in 2026. We don't have years of customer reviews yet — so instead of inventing them, here's what we can promise:</p>
+        <ul class="founder-list">
+          <li><strong>Every claim on this page is accurate.</strong> This is a passive NFC ring. We tell you exactly what it does, what needs setup, and what it doesn't do.</li>
+          <li><strong>Try it risk-free.</strong> 30-day no-questions returns with a full refund, on every order. If it isn't what you expected, send it back.</li>
+          <li><strong>Real support.</strong> Email support@axonring.online — a human replies within 1 business day.</li>
+          <li><strong>Reviews are coming.</strong> As verified customers share their experience, we'll publish them here, unedited.</li>
+        </ul>
+        <p class="founder-signoff">— The AxonRing Team</p>
       </div>
     </div>
   </section>
@@ -1011,42 +1048,42 @@
             What ring sizes are available?
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a" role="region"><p>AxonRing is available in sizes 6 through 13 (US sizing). A free sizing kit is included with every order so you can confirm your fit before wearing daily. International size conversions are available on our size guide.</p></div>
+          <div class="faq-a" role="region"><p>US sizes 6 through 13. After you order, we ship a free sizing kit first — you confirm your exact size before your ring ships, so it always fits. International conversions are in the guide included with the kit.</p></div>
         </div>
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-            Does it work with Apple Pay and Google Pay?
+            Can it make contactless payments?
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a" role="region"><p>Yes. AxonRing supports both Apple Pay and Google Pay via the companion app. You can also load cards directly through our secure NFC provisioning system, which works with all major Visa, Mastercard, and Amex cards.</p></div>
+          <div class="faq-a" role="region"><p>No — and any passive NFC ring claiming otherwise is overpromising. AxonRing has no secure payment chip, so it can't pay at card terminals. What it can hold is a payment link (PayPal.me, Venmo, Cash App) that opens on the other person's phone when they tap your ring — useful for getting paid, not for paying.</p></div>
         </div>
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
             Is the ring waterproof?
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a" role="region"><p>Both rings carry an IP68 rating, meaning they are fully waterproof up to 1.5 meters for 30 minutes. You can shower, swim, and exercise without removing your ring.</p></div>
+          <div class="faq-a" role="region"><p>Yes — because there's no battery or electronics beyond the sealed passive chip, the ring handles showers, swimming, and daily wear without issue. We don't recommend prolonged deep-water exposure, but everyday water contact is completely fine.</p></div>
         </div>
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
             Does it need charging?
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a" role="region"><p>No charging ever. AxonRing uses passive NFC technology, which draws power from the NFC reader it interacts with. There is no battery — which means no charging, no dead ring, and no weight.</p></div>
+          <div class="faq-a" role="region"><p>Never. The chip is passive — it draws its power from the phone reading it. No battery, no charging, nothing to die. It works for the life of the ring.</p></div>
         </div>
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
             What is your return policy?
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a" role="region"><p>We offer a 30-day no-questions-asked return policy. If you're not completely satisfied, contact our support team and we'll arrange a free return and full refund. The Executive includes a 1-year warranty; Prestige includes 2 years.</p></div>
+          <div class="faq-a" role="region"><p>A 30-day no-questions-asked return policy with full refund. Email support@axonring.online to start a return. Executive includes a 1-year warranty; Prestige includes 2 years, covering chip or material failure in normal use.</p></div>
         </div>
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
             How secure is my data?
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a" role="region"><p>All data stored on the ring is encrypted with AES-256-GCM — the same standard used by banks and governments. The ring requires biometric or PIN verification for sensitive operations, and supports remote wipe if lost or stolen.</p></div>
+          <div class="faq-a" role="region"><p>The ring stores only what you write to it — typically a contact card or link, which is information you intend to share. You can erase or rewrite it anytime with a free NFC app. Nothing on the ring connects to the internet, and we never see or store what you put on it.</p></div>
         </div>
       </div>
     </div>
@@ -1056,13 +1093,13 @@
   <section class="final-cta" aria-labelledby="final-cta-title">
     <div class="container">
       <h2 class="final-cta-title fade-up" id="final-cta-title">Ready to Wear<br/><span style="background:linear-gradient(135deg,var(--purple-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">the Future?</span></h2>
-      <p class="final-cta-sub fade-up fade-up-d1">Join thousands of people who've upgraded their daily life with AxonRing. Free shipping. 30-day returns. No subscriptions.</p>
+      <p class="final-cta-sub fade-up fade-up-d1">Free worldwide shipping. 30-day returns, no questions asked. One-time purchase — no subscription, ever.</p>
       <div class="hero-ctas fade-up fade-up-d2">
         <a href="https://buy.stripe.com/4gM7sD7sm7Aq4xDdBc4c800" class="btn-primary" aria-label="Buy AxonRing Executive for $349">
-          Executive — $349
+          Buy Executive — $349
         </a>
         <a href="https://buy.stripe.com/dRm8wH3c69Iyggl8gS4c801" class="btn-primary" style="background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--black)" aria-label="Buy AxonRing Prestige for $459">
-          Prestige — $459
+          Buy Prestige — $459
         </a>
       </div>
     </div>
@@ -1077,7 +1114,7 @@
           <div class="footer-logo-ring" aria-hidden="true"></div>
           AxonRing
         </div>
-        <p class="footer-desc">The world's most advanced NFC smart ring. Pay, unlock, authenticate, and share — all from your finger.</p>
+        <p class="footer-desc">A passive NFC smart ring for sharing your contact, links, and phone automations. No battery. No subscription.</p>
       </div>
       <nav class="footer-links" aria-label="Product links">
         <div class="footer-links-title">Product</div>
@@ -1090,14 +1127,21 @@
         <div class="footer-links-title">Support</div>
         <a href="#faq">FAQ</a>
         <a href="mailto:support@axonring.online">Contact Us</a>
-        <a href="#faq">Returns & Warranty</a>
+        <a href="/terms.html#returns">Returns &amp; Warranty</a>
         <a href="#faq">Size Guide</a>
       </nav>
       <nav class="footer-links" aria-label="Legal links">
         <div class="footer-links-title">Legal</div>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Cookie Policy</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+        <a href="/cookies.html">Cookie Policy</a>
+      </nav>
+      <nav class="footer-links" aria-label="Company information">
+        <div class="footer-links-title">Company</div>
+        <a href="mailto:support@axonring.online">support@axonring.online</a>
+        <a href="/terms.html#shipping">Shipping: 2–4 weeks total</a>
+        <a href="/terms.html#warranty">Warranty: 1–2 years</a>
+        <a href="/terms.html#returns">Returns: 30 days</a>
       </nav>
     </div>
     <div class="footer-bottom">
